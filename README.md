@@ -35,6 +35,7 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
   - [ ] Create and update forms.
   - [ ] Input validation
 - [ ] Bootstrap styling.
+- - - -
 - [ ] User authentication.
 - [ ] User profiles.
   - [ ] Profile info.
@@ -47,7 +48,6 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
   - [ ] Search by name.
   - [ ] Search by tags.
   - [ ] Search by dates.
-- - - -
 - [ ] Support for file upload and download.
 - [ ] Posts will have images assigned to display.
 - [ ] Users interactions over others' posts.
@@ -74,8 +74,13 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
 
 #### Dependencies
 
+- Spring core
 - Spring Web (Spring MVC)
 - Spring Data JPA
+- Spring Dev Tools
+- MySQL JDBC Driver
+- JDBC API
+- ModelMapper
 - Thymeleaf
 - Lombok
 
