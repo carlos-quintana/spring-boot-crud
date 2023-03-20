@@ -59,13 +59,25 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
 
 ### Database model
 
+*TO DO*
+
 ## Instructions
 
 *TO DO*
 
 ## Technologies Used
 
-*TO DO*
+- Java 11
+- Spring Boot 3.0
+- Maven
+- MariaDB 10.4
+
+#### Dependencies
+
+- Spring Web (Spring MVC)
+- Spring Data JPA
+- Thymeleaf
+- Lombok
 
 ## Get in touch
 
