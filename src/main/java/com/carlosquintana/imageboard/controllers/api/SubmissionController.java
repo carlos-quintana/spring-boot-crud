@@ -1,17 +1,17 @@
 package com.carlosquintana.imageboard.controllers.api;
 
-import com.carlosquintana.imageboard.models.dto.PostDTO;
-import com.carlosquintana.imageboard.services.data.PostDataAccessData;
+import com.carlosquintana.imageboard.models.dto.SubmissionDTO;
+import com.carlosquintana.imageboard.services.data.SubmissionDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/posts/")
-public class PostController {
+@RequestMapping("/api/v1/submissions/")
+public class SubmissionController {
 
     @Autowired
-    private PostDataAccessData service;
+    private SubmissionDataAccess service;
 
     @GetMapping
     public ResponseEntity findAll() {
@@ -24,16 +24,16 @@ public class PostController {
     }
 
     @PostMapping
-    public ResponseEntity save(@RequestBody PostDTO submittedPost) {
-        return ResponseEntity.ok(service.save(submittedPost));
+    public ResponseEntity save(@RequestBody SubmissionDTO newSubmission) {
+        return ResponseEntity.ok(service.save(newSubmission));
     }
 
     @PutMapping("{id:[0-9]+}")
-    public ResponseEntity update(@PathVariable long id, @RequestBody PostDTO postToUpdate) {
+    public ResponseEntity update(@PathVariable long id, @RequestBody SubmissionDTO submissionToUpdate) {
         System.out.println("Received PUT");
         System.out.println(id);
-        System.out.println(postToUpdate);
-        return ResponseEntity.ok(service.update(id, postToUpdate));
+        System.out.println(submissionToUpdate);
+        return ResponseEntity.ok(service.update(id, submissionToUpdate));
     }
 
     @DeleteMapping("{id:[0-9]+}")
