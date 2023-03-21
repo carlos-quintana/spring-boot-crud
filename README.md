@@ -29,7 +29,7 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
 ### Features
 
 **MVP:**
-- [ ] API Endpoint for CRUD operations on the main entity (A post).
+- [X] API Endpoint for CRUD operations on the main entity (A post).
 - [ ] Website templates for CRUD operations on the main entity (A post).
   - [ ] Main listing site
   - [ ] Create and update forms.
