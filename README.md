@@ -1,4 +1,4 @@
-# 🖼 Image Board
+# 🖼 Image Board Site
 Image board site created with Java and Spring Boot
 
 ## Table of Contents
@@ -21,37 +21,42 @@ The inspiration for this application comes from the intricate nature of these ki
 
 (*See the next section to know which features are implemented yet*)
 
-This application will simulate a social media application where different **Users** can make **Posts**. 
-Posts will contain information submitted by the user, like a title, a description and **Tags**. 
-Users will have their own profile page where they can see their **Gallery** containing their own posts, and visit other users' galleries to see theirs.
-Users can interact with other users' posts by giving a **Like** or leaving a **Comment**.
+This application will simulate a social media application where different **Users** can make **Submissions**. 
+Submissions will contain information given by the user, like a title, a description and **Tags**. Submissions can also belong to a series of pre established **Categories**.
+
+Users will have their own profile page where they can see their **Gallery** containing their own submissions, and visit other users' galleries to see theirs.
+Users can interact with other users' submissions by giving a **Like** or leaving a **Comment**.
 
 ### Features
 
 **MVP:**
-- [X] API Endpoint for CRUD operations on the main entity (A post).
-- [ ] Website templates for CRUD operations on the main entity (A post).
-  - [ ] Main listing site
+- [X] API Endpoint for CRUD operations on the main entity (A submission).
+- [ ] Website templates for CRUD operations on the main entity (A submission).
+  - [ ] Main listing site.
   - [ ] Create and update forms.
-  - [ ] Input validation
-- [ ] Bootstrap styling.
-- - - -
+  - [ ] Input validation (With bean validation).
+- [X] Bootstrap styling.
+- [ ] Submissions are assigned to a Category.
 - [ ] User authentication.
 - [ ] User profiles.
   - [ ] Profile info.
   - [ ] Gallery component.
+  - [ ] User dashboard.
+- - - -
 - [ ] User authorization.
-  - [ ] Permission over actions on other users posts.
+  - [ ] Permission over actions on other users submissions.
   - [ ] Guest visualization.
+  - [ ] Admin role for a super user.
 - [ ] Search feature.
   - [ ] Search by user.
   - [ ] Search by name.
   - [ ] Search by tags.
   - [ ] Search by dates.
 - [ ] Support for file upload and download.
-- [ ] Posts will have images assigned to display.
-- [ ] Users interactions over others' posts.
+- [ ] Submissions will have images assigned to display.
+- [ ] Users interactions over others' submission (Likes).
 - [ ] Posts have a comments section.
+- [ ] Move away from Bootstrap styling into Tailwind CSS.
 
 ### Showcase
 
@@ -59,11 +64,29 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
 
 ### Database model
 
-*TO DO*
+The following is the Entity-Relationship Model of the database:
+
+![image](https://user-images.githubusercontent.com/102340968/226977317-c0b3c8a5-50c7-4893-be1e-f20720ccd43d.png)
+
+Currently there is only one table representing the main entity of the application. The next step will be to create a categories table to assign to a submission and the users table that will come with the implementation of the authentication system.
 
 ## Instructions
 
-*TO DO*
+This is a Spring Boot application built using Maven. You can use your IDE of choice to build and run the project, or you can build a jar file and run it from the command line:
+
+```bash
+git clone https://github.com/carlos-quintana/spring-boot-crud.git
+
+cd spring-boot-crud
+
+./mvnw package
+
+java -jar target/*.jar
+```
+
+You can then access the site at http://localhost:8080/
+
+Note: Make sure your machine meets the minimum requirements, show in the [Technologies used](#technologies-used) section.
 
 ## Technologies Used
 
@@ -74,16 +97,20 @@ Users can interact with other users' posts by giving a **Like** or leaving a **C
 
 #### Dependencies
 
-- Spring core
+- Spring Core
 - Spring Web (Spring MVC)
 - Spring Data JPA
-- Spring Dev Tools
-- MySQL JDBC Driver
 - JDBC API
+- MySQL JDBC Driver
 - ModelMapper
-- Thymeleaf
+- Thymeleaf & Thymeleaf layout dialect
 - Lombok
+- Spring Dev Tools
 
 ## Get in touch
 
-*TO DO*
+Let's get in touch through:
+
+[💼 LinkedIn](https://linkedin.com/in/carlos-quintana-dev)
+
+*Last update: March of 2023*
