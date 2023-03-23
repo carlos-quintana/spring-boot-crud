@@ -43,6 +43,7 @@ Users can interact with other users' submissions by giving a **Like** or leaving
   - [ ] User dashboard.
   - [ ] User profile.
   - [ ] Gallery component.
+- [ ] Support for file upload and download.
 - - - -
 - [ ] User authorization.
   - [ ] Permission over actions on other users submissions.
@@ -53,8 +54,6 @@ Users can interact with other users' submissions by giving a **Like** or leaving
   - [ ] Search by name.
   - [ ] Search by tags.
   - [ ] Search by dates.
-- [ ] Support for file upload and download.
-- [ ] Submissions will have images assigned to display.
 - [ ] Users interactions over others' submission (Likes).
 - [ ] Posts have a comments section.
 - [ ] Move away from Bootstrap styling into Tailwind CSS.
@@ -85,7 +84,7 @@ Note: Make sure your machine meets the minimum requirements, show in the [Techno
 
 ![Submissions listings site](https://user-images.githubusercontent.com/102340968/227072701-1a43edae-26ec-454b-b9ca-d185a8464faf.png)
 
-***Note:** All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, like titles, description or tags are made up and the original authors of the images have no relation with the project. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
+***Note:** All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, like titles, description and tags are made up and the original authors of the images have no relation with the project. I also plan to compose a list of all of the original sources as to give credit to each one of them. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
 
 The next step will be to change the site from a big table to a series of cards, where all of the elements like title, thumbnail and description can fit more naturally, and the site can become responsive.
 
