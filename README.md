@@ -5,9 +5,10 @@ Image board site created with Java and Spring Boot
 1. [Introduction](#introduction)
 2. [Description](#description)
 3. [Features](#features)
-4. [Showcase](#showcase)
-5. [Technologies Used](#technologies-used)
-6. [Contact](#get-in-touch)
+4. [Instructions](#instructions)
+5. [Showcase](#showcase)
+6. [Technologies Used](#technologies-used)
+7. [Contact](#get-in-touch)
 
 ## Introduction
 
@@ -32,16 +33,16 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 **MVP:**
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
 - [ ] Website templates for CRUD operations on the main entity (A submission).
-  - [ ] Main listing site.
+  - [X] Main listing site.
   - [ ] Create and update forms.
   - [ ] Input validation (With bean validation).
 - [X] Bootstrap styling.
 - [ ] Submissions are assigned to a Category.
 - [ ] User authentication.
-- [ ] User profiles.
-  - [ ] Profile info.
-  - [ ] Gallery component.
+- [ ] User's template sites.
   - [ ] User dashboard.
+  - [ ] User profile.
+  - [ ] Gallery component.
 - - - -
 - [ ] User authorization.
   - [ ] Permission over actions on other users submissions.
@@ -58,19 +59,7 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 - [ ] Posts have a comments section.
 - [ ] Move away from Bootstrap styling into Tailwind CSS.
 
-### Showcase
-
-*TO DO*
-
-### Database model
-
-The following is the Entity-Relationship Model of the database:
-
-![image](https://user-images.githubusercontent.com/102340968/226977317-c0b3c8a5-50c7-4893-be1e-f20720ccd43d.png)
-
-Currently there is only one table representing the main entity of the application. The next step will be to create a categories table to assign to a submission and the users table that will come with the implementation of the authentication system.
-
-## Instructions
+### Instructions
 
 This is a Spring Boot application built using Maven. You can use your IDE of choice to build and run the project, or you can build a jar file and run it from the command line:
 
@@ -86,7 +75,31 @@ java -jar target/*.jar
 
 You can then access the site at http://localhost:8080/
 
+![Index page of the site](https://user-images.githubusercontent.com/102340968/227072557-05777253-ba50-4f66-a8ba-9b70dee0f928.png)
+
 Note: Make sure your machine meets the minimum requirements, show in the [Technologies used](#technologies-used) section.
+
+### Showcase
+
+#### Submissions listings site:
+
+![Submissions listings site](https://user-images.githubusercontent.com/102340968/227072701-1a43edae-26ec-454b-b9ca-d185a8464faf.png)
+
+***Note:** All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, like titles, description or tags are made up and the original authors of the images have no relation with the project. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
+
+The next step will be to change the site from a big table to a series of cards, where all of the elements like title, thumbnail and description can fit more naturally, and the site can become responsive.
+
+#### Create and update forms
+
+*TO DO*
+
+### Database model
+
+The following is the Entity-Relationship Model of the database:
+
+ ![Entity-Relationship Model](https://user-images.githubusercontent.com/102340968/227071566-7f7fbcc5-fbee-4734-b807-84733d06e3e8.png)
+
+Currently there is only one table representing the main entity of the application: the Submission. The next step will be to create a categories table to assign to a submission and the users table that will come with the implementation of the authentication system.
 
 ## Technologies Used
 
@@ -94,6 +107,7 @@ Note: Make sure your machine meets the minimum requirements, show in the [Techno
 - Spring Boot 3.0
 - Maven
 - MariaDB 10.4
+- Bootstrap 5
 
 #### Dependencies
 
