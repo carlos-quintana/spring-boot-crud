@@ -7,3 +7,13 @@ body {
 .content {
     flex-grow:1;
 }
+
+.sub-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px #0004;
+}
+
+.sub-description {width:100%}

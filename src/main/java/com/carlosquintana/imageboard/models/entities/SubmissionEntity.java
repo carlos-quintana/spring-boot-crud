@@ -20,6 +20,10 @@ public class SubmissionEntity implements Serializable {
     private String description;
     @Column(name = "tags")
     private String tags;
+    @Column(name="category")
+    private String category;
+    @Column(name="img_source")
+    private String img_source;
     @Column(name="created_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;

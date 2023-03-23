@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
+<body layout:fragment="content">
+<h1>Submissions listing</h1>
+<div class="mt-1">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">User</th>
+            <th scope="col">Thumbnail</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Tags</th>
+            <th scope="col">Category</th>
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${submissions.empty}">
+            <td colspan="5">There are no submissions</td>
+        </tr>
+        <tr th:each="submission: ${submissions}">
+            <th scope="row" th:text="${submission.id}">id</th>
+            <td>User</td>
+            <td>
+                <a th:href="@{/submissions/{id}(id=${submission.id})}">
+                    <img class="sub-thumbnail" th:src="${submission.img_source}">
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/submissions/{id}(id=${submission.id})}">
+                    <span th:text="${submission.title}"></span>
+                </a>
+            </td>
+            <td th:text="${submission.description}" class="sub-description">description</td>
+            <td th:text="${submission.tags}">tags</td>
+            <td th:text="${submission.category}">Category</td>
+            <td>
+                <a class="btn btn-primary" th:href="@{/submissions/{id}(id=${submission.id})}">View</a>
+            </td>
+            <td>
+                <a class="btn btn-warning" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
+            </td>
+            <td>
+                <form th:method="DELETE" th:action="@{/submissions/{id}(id=${submission.id})}">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>

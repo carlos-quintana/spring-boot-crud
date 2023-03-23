@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en" layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
 <body layout:fragment="content">
-<h1>Image Board website</h1>
+<h1>🖼 Image Board website</h1>
 <h3>A Spring Boot application made by Carlos Quintana</h3>
-<div class="mt-5">
-    <p>
-        <a class="btn btn-primary" href="https://github.com/carlos-quintana/spring-boot-crud#-image-board" rel="noreferrer"
+<div class="mt-5 d-flex">
+    <div class="d-flex flex-column align-items-center w-50">
+        <a class="btn btn-primary mb-3"
+           href="https://github.com/carlos-quintana/spring-boot-crud#-image-board-site" rel="noreferrer"
            target="_blank">
             GitHub repo</a>
-        Find some instructions and more information about the project over on the project's repo.
-    </p>
-    <p>
-        <a class="btn btn-secondary" href="/submissions">
+        <p class="w-50">Find some instructions and more information about the project over on the project's repo.</p>
+    </div>
+    <div class="d-flex flex-column align-items-center w-50">
+        <a class="btn btn-secondary mb-3" href="/submissions/">
             Listings</a>
-        Begin browsing the submissions.
-    </p>
+        <p class="w-50">Begin browsing the submissions.</p>
+    </div>
 </div>
 </body>
