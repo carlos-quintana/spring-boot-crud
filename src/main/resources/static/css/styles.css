@@ -8,7 +8,7 @@ body {
     flex-grow:1;
 }
 
-.sub-thumbnail {
+.td-thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -16,4 +16,49 @@ body {
     box-shadow: 0px 5px 15px #0004;
 }
 
-.sub-description {width:100%}
+.td-description {
+    width:100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.td-tags {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+@media(max-width:1000px) {
+    .submission-display {
+        flex-wrap:wrap;
+    }
+}
+.submission-title {
+    flex-grow:1
+}
+
+.submission-img {
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 1rem;
+}
+
+.submission-details {
+    flex-grow: 1;
+    background: #ccc;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.submission-description {
+    flex-grow:1
+}
+
+.tags-container > ul {
+    list-style: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

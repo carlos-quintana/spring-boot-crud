@@ -27,7 +27,7 @@
             <td>User</td>
             <td>
                 <a th:href="@{/submissions/{id}(id=${submission.id})}">
-                    <img class="sub-thumbnail" th:src="${submission.img_source}">
+                    <img class="td-thumbnail" th:src="${submission.img_source}">
                 </a>
             </td>
             <td>
@@ -35,7 +35,7 @@
                     <span th:text="${submission.title}"></span>
                 </a>
             </td>
-            <td th:text="${submission.description}" class="sub-description">description</td>
+            <td th:text="${submission.description}" class="td-description">description</td>
             <td th:text="${submission.tags}">tags</td>
             <td th:text="${submission.category}">Category</td>
             <td>

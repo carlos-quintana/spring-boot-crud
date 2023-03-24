@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,14 +21,29 @@ public class SubmissionController {
     @GetMapping
     public String findAll(Model model) {
         List<SubmissionDTO> allSubmissions = service.findAll();
+        // fix the tags spacing so that the page can be visualized properly
+        // This can be removed once the dabatabase records are normalized and the create and update forms are working to fix this problem
+        for(SubmissionDTO submission: allSubmissions){
+            String newTags = "";
+            for (String tag: submission.getTags().split(","))
+                newTags += tag.trim().toLowerCase()+", ";
+            submission.setTags(newTags);
+        }
         model.addAttribute("submissions", allSubmissions);
         return "submissionsListing";
     }
 
-    // TODO - implement
     @GetMapping("{id:[0-9]+}")
-    public ResponseEntity findById(@PathVariable long id) {
-        return ResponseEntity.ok(service.findById(id));
+    public String findById(@PathVariable long id, Model model) {
+        SubmissionDTO submission = service.findById(id);
+        model.addAttribute("submission", submission);
+
+        List<String> tags = new ArrayList<String>();
+        for (String tag: submission.getTags().split(","))
+            tags.add(tag.trim());
+        model.addAttribute("tags", tags);
+
+        return "submissions/submissionView";
     }
 
     // TODO - implement

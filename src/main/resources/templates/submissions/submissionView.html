@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
+<body layout:fragment="content">
+<div class="d-flex align-items-center">
+    <h1 class="submission-title" th:text="${submission.title}">Title of the submission</h1>
+    <a class="btn btn-warning" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
+    <form th:method="DELETE" th:action="@{/submissions/{id}(id=${submission.id})}">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+<div class="submission-display d-flex justify-content-center gap-5">
+    <img class="submission-img" th:src="${submission.img_source}">
+    <div class="submission-details d-flex flex-column">
+        <h5>Description:</h5>
+        <p class="submission-description" th:text="${submission.description}">Description of the image</p>
+        <h5>Tags:</h5>
+        <div class="tags-container">
+            <ul class="d-flex gap-1 justify-content-center">
+                <li th:each="tag: ${tags}">
+                    <span class="btn btn-secondary rounded-pill py-1" th:text="${tag}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
