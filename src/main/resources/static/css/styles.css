@@ -19,9 +19,9 @@ body {
 .td-description {
     width:100%;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+//    display: -webkit-box;
+//    -webkit-line-clamp: 3;
+//    -webkit-box-orient: vertical;
 }
 
 .td-tags {
@@ -61,4 +61,8 @@ body {
     list-style: none;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+footer > ul {
+    list-style:none;
 }

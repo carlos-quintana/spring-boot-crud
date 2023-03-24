@@ -57,15 +57,18 @@ public class SubmissionController {
         return "redirect:/submissions/"+newId;
     }
 
-    // TODO - implement a get method for the edit form
+    @GetMapping("edit/{id:[0-9]+}")
+    public String showUpdateForm(@PathVariable long id, Model model) {
+        // TODO - validate the submission even exists
+        SubmissionDTO submissionToUpdate = service.findById(id);
+        model.addAttribute("submission", submissionToUpdate);
+        return "submissions/updateForm";
+    }
 
-    // TODO - implement
-    @PutMapping("{id:[0-9]+}")
-    public ResponseEntity update(@PathVariable long id, @RequestBody SubmissionDTO submissionToUpdate) {
-        System.out.println("Received PUT");
-        System.out.println(id);
-        System.out.println(submissionToUpdate);
-        return ResponseEntity.ok(service.update(id, submissionToUpdate));
+    @PutMapping("edit/{id:[0-9]+}")
+    public String update(@PathVariable long id, SubmissionDTO submissionToUpdate) {
+        service.update(id, submissionToUpdate);
+        return "redirect:/submissions/"+id;
     }
 
     @DeleteMapping("{id:[0-9]+}")

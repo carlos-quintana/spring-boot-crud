@@ -13,7 +13,6 @@
             <th scope="col">Description</th>
             <th scope="col">Tags</th>
             <th scope="col">Category</th>
-            <th scope="col">View</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
         </tr>
@@ -38,9 +37,6 @@
             <td th:text="${submission.description}" class="td-description">description</td>
             <td th:text="${submission.tags}">tags</td>
             <td th:text="${submission.category}">Category</td>
-            <td>
-                <a class="btn btn-primary" th:href="@{/submissions/{id}(id=${submission.id})}">View</a>
-            </td>
             <td>
                 <a class="btn btn-warning" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
             </td>
