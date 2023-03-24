@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
+<body layout:fragment="content">
+<div class="d-flex flex-column align-items-center">
+    <h1>New submission</h1>
+
+    <form th:method="post" action="/submissions/new">
+        <div class="mb-3">
+            <label for="titleInput" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="titleInput">
+        </div>
+        <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <textarea type="text" class="form-control" name="description" id="descriptionInput"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="tagsInput" class="form-label">Tags</label>
+            <input type="text" class="form-control" name="tags" id="tagsInput" aria-describedby="tagsHelp">
+            <div id="tagsHelp" class="form-text">Input tags separated by commas.</div>
+        </div>
+        <div class="mb-3">
+            <label for="categoryInput" class="form-label">Category</label>
+            <select class="form-select" name="category" id="categoryInput" required>
+                <option value="" selected>Select a category</option>
+                <option value="Photography">Photography</option>
+                <option value="Vector">Vector</option>
+                <option value="Painting">Painting</option>
+                <option value="3D Render">3D Render</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="fileInput" class="form-label">Upload your image</label>
+            <input type="file" class="form-control" id="fileInput" disabled/>
+            <input hidden name="img_source" value="/img/404.jpg"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>

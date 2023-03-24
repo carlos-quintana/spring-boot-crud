@@ -46,11 +46,18 @@ public class SubmissionController {
         return "submissions/submissionView";
     }
 
-    // TODO - implement
-    @PostMapping
-    public ResponseEntity save(@RequestBody SubmissionDTO newSubmission) {
-        return ResponseEntity.ok(service.save(newSubmission));
+    @GetMapping("new")
+    public String showCreateForm() {
+        return "submissions/newForm";
     }
+
+    @PostMapping("new")
+    public String createNewSubmission(SubmissionDTO submissionDTO, Model model) {
+        long newId = service.save(submissionDTO);
+        return "redirect:/submissions/"+newId;
+    }
+
+    // TODO - implement a get method for the edit form
 
     // TODO - implement
     @PutMapping("{id:[0-9]+}")
@@ -61,9 +68,9 @@ public class SubmissionController {
         return ResponseEntity.ok(service.update(id, submissionToUpdate));
     }
 
-    // TODO - implement
     @DeleteMapping("{id:[0-9]+}")
-    public ResponseEntity delete(@PathVariable long id) {
-        return ResponseEntity.ok(service.delete(id));
+    public String delete(@PathVariable long id, Model model) {
+        service.delete(id);
+        return "redirect:/submissions/";
     }
 }
