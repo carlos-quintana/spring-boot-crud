@@ -34,7 +34,7 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
 - [ ] Website templates for CRUD operations on the main entity (A submission).
   - [X] Main listing site.
-  - [ ] Create and update forms.
+  - [X] Create and update forms.
   - [ ] Input validation (With bean validation).
 - [X] Bootstrap styling.
 - [ ] Submissions are assigned to a Category.
@@ -74,7 +74,7 @@ java -jar target/*.jar
 
 You can then access the site at http://localhost:8080/
 
-![Index page of the site](https://user-images.githubusercontent.com/102340968/227072557-05777253-ba50-4f66-a8ba-9b70dee0f928.png)
+![Index page of the site](https://user-images.githubusercontent.com/102340968/227415512-ae7e3cdc-4579-4160-91c6-5676259f8bc3.png)
 
 Note: Make sure your machine meets the minimum requirements, show in the [Technologies used](#technologies-used) section.
 
@@ -82,15 +82,20 @@ Note: Make sure your machine meets the minimum requirements, show in the [Techno
 
 #### Submissions listings site:
 
-![Submissions listings site](https://user-images.githubusercontent.com/102340968/227072701-1a43edae-26ec-454b-b9ca-d185a8464faf.png)
+![Submissions listings site](https://user-images.githubusercontent.com/102340968/227416105-6a5682f2-1fd1-4f44-b2b2-0a4cc6e883c7.png)
 
 ***Note:** All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, like titles, description and tags are made up and the original authors of the images have no relation with the project. I also plan to compose a list of all of the original sources as to give credit to each one of them. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
 
 The next step will be to change the site from a big table to a series of cards, where all of the elements like title, thumbnail and description can fit more naturally, and the site can become responsive.
 
+#### Individual submission view
+
+![Individual submission](https://user-images.githubusercontent.com/102340968/227416102-553566d4-1971-451c-bbb6-fb3bc0a1f7ec.png)
+
 #### Create and update forms
 
-*TO DO*
+![Create and Update forms](https://user-images.githubusercontent.com/102340968/227416089-195f7104-a5b2-4eee-a10e-e030a4fd6bb7.png)
+
 
 ### Database model
 
