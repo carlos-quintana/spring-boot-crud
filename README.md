@@ -33,9 +33,10 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 **MVP:**
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
 - [ ] Website templates for CRUD operations on the main entity (A submission).
-  - [X] Main listing site.
+  - [X] A listing view made of a table.
   - [X] Create and update forms.
   - [ ] Input validation (With bean validation).
+  - [ ] A listing view made of tags.
 - [X] Bootstrap styling.
 - [ ] Submissions are assigned to a Category.
 - [ ] User authentication.
