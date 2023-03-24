@@ -36,7 +36,7 @@ Users can interact with other users' submissions by giving a **Like** or leaving
   - [X] A listing view made of a table.
   - [X] Create and update forms.
   - [ ] Input validation (With bean validation).
-  - [ ] A listing view made of tags.
+  - [ ] A listing view made of cards.
 - [X] Bootstrap styling.
 - [ ] Submissions are assigned to a Category.
 - [ ] User authentication.
