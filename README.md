@@ -22,7 +22,7 @@ The inspiration for this application comes from the intricate nature of these ki
 
 (*See the next section to know which features are implemented yet*)
 
-This application will simulate a social media application where different **Users** can make **Submissions**. 
+This application will simulate a social media application focused on images where different **Users** can make **Submissions**. 
 Submissions will contain information given by the user, like a title, a description and **Tags**. Submissions can also belong to a series of pre established **Categories**.
 
 Users will have their own profile page where they can see their **Gallery** containing their own submissions, and visit other users' galleries to see theirs.
@@ -85,7 +85,7 @@ Note: Make sure your machine meets the minimum requirements, show in the [Techno
 
 ![Submissions listings site](https://user-images.githubusercontent.com/102340968/227416105-6a5682f2-1fd1-4f44-b2b2-0a4cc6e883c7.png)
 
-***Note:** All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, like titles, description and tags are made up and the original authors of the images have no relation with the project. I also plan to compose a list of all of the original sources as to give credit to each one of them. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
+***Note:** None of these images were made by me. All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, including usernames, titles, descriptions and tags are made up and the original authors of the images have no relation with the project. I also plan to compose a list of all of the original sources as to give credit to each one of them. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
 
 The next step will be to change the site from a big table to a series of cards, where all of the elements like title, thumbnail and description can fit more naturally, and the site can become responsive.
 
