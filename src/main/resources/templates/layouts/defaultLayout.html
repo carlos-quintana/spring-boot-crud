@@ -8,14 +8,14 @@
 </head>
 <body>
 <!-- header -->
-<div th:replace="fragments/header :: header"></div>
+<div th:replace="~{fragments/header :: header}"></div>
 
 <!-- content -->
 <div class="content container px-3 py-4">
     <section layout:fragment="content"></section>
 </div>
 <!-- footer -->
-<div th:replace="fragments/footer :: footer"></div>
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 <script src="/js/bootstrap.bundle.js"></script>
 </body>
