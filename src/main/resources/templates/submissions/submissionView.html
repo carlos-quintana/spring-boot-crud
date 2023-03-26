@@ -3,18 +3,24 @@
 <body layout:fragment="content">
 <div class="d-flex align-items-center">
     <h1 class="submission-title" th:text="${submission.title}">Title of the submission</h1>
-    <a class="btn btn-warning" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
+    <a class="btn btn-warning mx-2" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
     <form th:method="DELETE" th:action="@{/submissions/{id}(id=${submission.id})}">
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger mx-2">Delete</button>
     </form>
 </div>
 
-<div class="submission-display d-flex justify-content-center gap-5">
+<div class="submission-display d-flex justify-content-center align-items-start gap-5">
     <img class="submission-img" th:src="${submission.img_source}">
     <div class="submission-details d-flex flex-column">
-        <h5>Description:</h5>
-        <p class="submission-description" th:text="${submission.description}">Description of the image</p>
-        <h5>Tags:</h5>
+        <h5>
+            <img src="/img/user.png" alt="user profile picture" style="max-width: 2rem;border-radius: 50%;">
+            <a href="#">User</a>
+        </h5>
+        <p><small class="text-muted">Uploaded 3 hours ago</small></p>
+        <h6>Description:</h6>
+        <p th:text="${submission.description}">Description of the image</p>
+
+        <h6>Tags:</h6>
         <div class="tags-container">
             <ul class="d-flex gap-1 justify-content-center">
                 <li th:each="tag: ${tags}">
