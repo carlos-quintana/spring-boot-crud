@@ -8,6 +8,18 @@ body {
     flex-grow:1;
 }
 
+a {
+    text-decoration: none;
+}
+
+.hero-img {
+    max-width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    filter: contrast(1) brightness(1.25);
+}
+
 .td-thumbnail {
     width: 100px;
     height: 100px;
@@ -19,9 +31,6 @@ body {
 .td-description {
     width:100%;
     overflow: hidden;
-//    display: -webkit-box;
-//    -webkit-line-clamp: 3;
-//    -webkit-box-orient: vertical;
 }
 
 .td-tags {
@@ -51,10 +60,6 @@ body {
     background: #ccc;
     border-radius: 1rem;
     padding: 1rem;
-}
-
-.submission-description {
-    flex-grow:1
 }
 
 .tags-container > ul {

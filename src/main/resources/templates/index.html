@@ -2,19 +2,34 @@
 <html lang="en" layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
 <body layout:fragment="content">
 <h1>🖼 Image Board website</h1>
-<h3>A Spring Boot application made by Carlos Quintana</h3>
-<div class="mt-5 d-flex">
-    <div class="d-flex flex-column align-items-center w-50">
-        <a class="btn btn-primary mb-3"
-           href="https://github.com/carlos-quintana/spring-boot-crud#-image-board-site" rel="noreferrer"
-           target="_blank">
-            GitHub repo</a>
-        <p class="w-50">Find some instructions and more information about the project over on the project's repo.</p>
+<h6>A Spring Boot application made by Carlos Quintana</h6>
+<div class="mt-1 d-flex flex-row-reverse align-items-center gap-3">
+    <div class="col">
+        <img
+                src="https://images.pexels.com/photos/4340918/pexels-photo-4340918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="hero-img">
     </div>
-    <div class="d-flex flex-column align-items-center w-50">
-        <a class="btn btn-secondary mb-3" href="/submissions/">
-            Listings</a>
-        <p class="w-50">Begin browsing the submissions.</p>
+    <div class="col">
+        <div class="d-flex align-items-center alert alert-success">
+            <a class="btn btn-success mx-2 disabled"
+               href="#" aria-disabled="true">
+                Register</a>
+            <p class="m-0">Create an account and start posting today! </p>
+        </div>
+        <div class="d-flex align-items-center alert alert-primary">
+            <a class="btn btn-primary mx-2"
+               href="/submissions/">
+                Submissions Listing</a>
+            <p class="m-0">Begin browsing the submissions as a guest.</p>
+        </div>
+        <div class="d-flex align-items-center alert alert-secondary">
+            <a class="btn btn-secondary mx-2" style="white-space: nowrap;"
+               href="https://github.com/carlos-quintana/spring-boot-crud#-image-board-site" rel="noreferrer"
+               target="_blank">
+                GitHub repo</a>
+            <p class="m-0">Find some instructions and more information about the project over on the project's repo.</p>
+        </div>
     </div>
+
 </div>
 </body>
