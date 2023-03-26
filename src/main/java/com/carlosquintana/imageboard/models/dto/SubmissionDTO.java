@@ -15,7 +15,9 @@ public class SubmissionDTO {
 
     private String tags;
 
-    private String category;
+    private Long category;
+
+    private String categoryName;
 
     private String img_source;
 

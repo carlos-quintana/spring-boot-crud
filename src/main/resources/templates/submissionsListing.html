@@ -36,7 +36,7 @@
             </td>
             <td th:text="${submission.description}" class="td-description">description</td>
             <td th:text="${submission.tags}">tags</td>
-            <td th:text="${submission.category}">Category</td>
+            <td th:text="${submission.categoryName}">Category</td>
             <td>
                 <a class="btn btn-warning" th:href="@{/submissions/edit/{id}(id=${submission.id})}">Edit</a>
             </td>

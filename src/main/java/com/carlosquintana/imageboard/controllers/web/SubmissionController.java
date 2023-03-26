@@ -1,6 +1,8 @@
 package com.carlosquintana.imageboard.controllers.web;
 
 import com.carlosquintana.imageboard.models.dto.SubmissionDTO;
+import com.carlosquintana.imageboard.models.entities.CategoryEntity;
+import com.carlosquintana.imageboard.services.data.CategoryDataAccess;
 import com.carlosquintana.imageboard.services.data.SubmissionDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ public class SubmissionController {
 
     @Autowired
     private SubmissionDataAccess service;
+    @Autowired
+    private CategoryDataAccess categoryService;
 
     @GetMapping
     public String findAll(Model model) {
@@ -47,7 +51,9 @@ public class SubmissionController {
     }
 
     @GetMapping("new")
-    public String showCreateForm() {
+    public String showCreateForm(Model model) {
+        List<CategoryEntity> categories = categoryService.findAll();
+        model.addAttribute("categories", categories);
         return "submissions/newForm";
     }
 
@@ -62,6 +68,8 @@ public class SubmissionController {
         // TODO - validate the submission even exists
         SubmissionDTO submissionToUpdate = service.findById(id);
         model.addAttribute("submission", submissionToUpdate);
+        List<CategoryEntity> categories = categoryService.findAll();
+        model.addAttribute("categories", categories);
         return "submissions/updateForm";
     }
 
