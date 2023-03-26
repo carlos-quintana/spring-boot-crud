@@ -22,11 +22,12 @@ public class SubmissionController {
     @Autowired
     private CategoryDataAccess categoryService;
 
+
     @GetMapping
-    public String findAll(Model model) {
+    public String showGrid(Model model) {
         List<SubmissionDTO> allSubmissions = service.findAll();
         // fix the tags spacing so that the page can be visualized properly
-        // This can be removed once the dabatabase records are normalized and the create and update forms are working to fix this problem
+        // This can be removed once the database records are normalized and the create and update forms are working to fix this problem
         for(SubmissionDTO submission: allSubmissions){
             String newTags = "";
             for (String tag: submission.getTags().split(","))
@@ -34,8 +35,24 @@ public class SubmissionController {
             submission.setTags(newTags);
         }
         model.addAttribute("submissions", allSubmissions);
-        return "submissionsListing";
+        return "submissions/submissionsGrid";
     }
+
+    @GetMapping("listing")
+    public String showListing(Model model) {
+        List<SubmissionDTO> allSubmissions = service.findAll();
+        // fix the tags spacing so that the page can be visualized properly
+        // This can be removed once the database records are normalized and the create and update forms are working to fix this problem
+        for(SubmissionDTO submission: allSubmissions){
+            String newTags = "";
+            for (String tag: submission.getTags().split(","))
+                newTags += tag.trim().toLowerCase()+", ";
+            submission.setTags(newTags);
+        }
+        model.addAttribute("submissions", allSubmissions);
+        return "submissions/submissionsListing";
+    }
+
 
     @GetMapping("{id:[0-9]+}")
     public String findById(@PathVariable long id, Model model) {
