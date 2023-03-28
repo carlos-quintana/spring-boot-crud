@@ -55,6 +55,7 @@ public class SubmissionDataAccess {
         if (categoryRepository.findById(submissionToUpdate.getCategory()).isEmpty())
             // The category id that was sent does not exist, TODO exception
             return null;
+        submissionToUpdate.setId(id);
         submissionToUpdate.setCreatedAt(existingEntity.getCreatedAt());
         // SubmissionEntity entity = mapper.map(submissionToUpdate, SubmissionEntity.class);
         SubmissionEntity entity = dtoToEntity(submissionToUpdate);
