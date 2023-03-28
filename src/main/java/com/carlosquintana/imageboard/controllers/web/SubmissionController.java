@@ -38,7 +38,7 @@ public class SubmissionController {
         return "submissions/submissionsGrid";
     }
 
-    @GetMapping("listing")
+    @GetMapping("admin/submissions/")
     public String showListing(Model model) {
         List<SubmissionDTO> allSubmissions = service.findAll();
         // fix the tags spacing so that the page can be visualized properly
