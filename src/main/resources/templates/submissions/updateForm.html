@@ -4,29 +4,33 @@
 <div class="d-flex flex-column align-items-center">
     <h1>Update the submission</h1>
 
-    <form th:method="put" th:action="@{/submissions/edit/{id}(id=${submission.id})}">
+    <form th:method="put" th:action="@{/submissions/edit/{id}(id=${submission.id})}" th:object="${submission}">
         <div class="mb-3">
             <label for="titleInput" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" id="titleInput" th:value="${submission.title}">
+            <input type="text" class="form-control" name="title" id="titleInput" th:value="${submission.title}"  th:field="*{title}">
+            <p class="alert alert-danger py-2" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
         </div>
         <div class="mb-3">
             <label for="descriptionInput" class="form-label">Description</label>
-            <textarea type="text" class="form-control" name="description" id="descriptionInput" th:text="${submission.description}"></textarea>
+            <textarea type="text" class="form-control" name="description" id="descriptionInput" th:text="${submission.description}" th:field="*{description}"></textarea>
+            <p class="alert alert-danger py-2" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
         </div>
         <div class="mb-3">
             <label for="tagsInput" class="form-label">Tags</label>
-            <input type="text" class="form-control" name="tags" id="tagsInput" aria-describedby="tagsHelp" th:value="${submission.tags}">
+            <input type="text" class="form-control" name="tags" id="tagsInput" aria-describedby="tagsHelp" th:value="${submission.tags}" th:field="*{tags}">
             <div id="tagsHelp" class="form-text">Input tags separated by commas.</div>
+            <p class="alert alert-danger py-2" th:if="${#fields.hasErrors('tags')}" th:errors="*{tags}"></p>
         </div>
         <div class="mb-3">
             <label for="categoryInput" class="form-label">Category</label>
-            <select class="form-select" name="category" id="categoryInput" required>
+            <select class="form-select" name="category" id="categoryInput">
                 <option value="" selected>Select a category</option>
                 <option th:each="category: ${categories}"
                         th:value="${category.id}"
                         th:text="${category.name}"
                         th:selected="${category.id==submission.category}"></option>
             </select>
+            <p class="alert alert-danger py-2" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></p>
         </div>
         <div class="mb-3">
             <label for="fileInput" class="form-label">Upload your image</label>

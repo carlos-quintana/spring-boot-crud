@@ -2,6 +2,7 @@ package com.carlosquintana.imageboard.controllers.api;
 
 import com.carlosquintana.imageboard.models.dto.SubmissionDTO;
 import com.carlosquintana.imageboard.services.data.SubmissionDataAccess;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class SubmissionApiController {
     }
 
     @PostMapping
-    public ResponseEntity save(@RequestBody SubmissionDTO newSubmission) {
+    public ResponseEntity save(@RequestBody @Valid SubmissionDTO newSubmission) {
         return ResponseEntity.ok(service.save(newSubmission));
     }
 
