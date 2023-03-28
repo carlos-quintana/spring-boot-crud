@@ -32,18 +32,18 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 
 **MVP:**
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
-- [ ] Website templates for CRUD operations on the main entity (A submission).
+- [ ] Views for CRUD operations on the main entity (A submission).
   - [X] A listing view made of a table.
   - [X] Create and update forms.
-  - [ ] Input validation (With bean validation).
-  - [ ] A listing view made of cards.
+  - [ ] Server side input validation (With bean validation).
+  - [X] A listing view made of cards.
+  - [ ] Implement pagination.
 - [X] Bootstrap styling.
-- [ ] Submissions are assigned to a Category.
+- [X] Submissions are assigned to a Category.
 - [ ] User authentication.
 - [ ] User's template sites.
   - [ ] User dashboard.
   - [ ] User profile.
-  - [ ] Gallery component.
 - [ ] Support for file upload and download.
 - - - -
 - [ ] User authorization.
@@ -59,7 +59,7 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 - [ ] Posts have a comments section.
 - [ ] Move away from Bootstrap styling into Tailwind CSS.
 
-### Instructions
+## Instructions
 
 This is a Spring Boot application built using Maven. You can use your IDE of choice to build and run the project, or you can build a jar file and run it from the command line:
 
@@ -75,36 +75,41 @@ java -jar target/*.jar
 
 You can then access the site at http://localhost:8080/
 
-![Index page of the site](https://user-images.githubusercontent.com/102340968/227415512-ae7e3cdc-4579-4160-91c6-5676259f8bc3.png)
+![Landing page](https://user-images.githubusercontent.com/102340968/227805569-c65b4b82-b1aa-4acc-a799-ccbab43fcd33.png)
 
 Note: Make sure your machine meets the minimum requirements, show in the [Technologies used](#technologies-used) section.
 
-### Showcase
+## Showcase
 
-#### Submissions listings site:
+### Main Submissions listings site:
 
-![Submissions listings site](https://user-images.githubusercontent.com/102340968/227416105-6a5682f2-1fd1-4f44-b2b2-0a4cc6e883c7.png)
+![Grid view](https://user-images.githubusercontent.com/102340968/227805863-c43b1da6-e5f4-4727-8eaf-488d66739c09.png)
 
 ***Note:** None of these images were made by me. All of the example images were taken from sites where they were posted as having a CC 1.0 license or otherwise marked as Free to use in personal projects without comercial gain. All of the fields presented in this project, including usernames, titles, descriptions and tags are made up and the original authors of the images have no relation with the project. I also plan to compose a list of all of the original sources as to give credit to each one of them. If any of the original authors would like to have their work taken down I encourage them to get in contact with me.*
 
-The next step will be to change the site from a big table to a series of cards, where all of the elements like title, thumbnail and description can fit more naturally, and the site can become responsive.
+- - - -
+### Individual submission view
 
-#### Individual submission view
+![Individual submission](https://user-images.githubusercontent.com/102340968/227805521-a852c30a-8f7a-4333-a23e-d330dc90a851.png)
 
-![Individual submission](https://user-images.githubusercontent.com/102340968/227416102-553566d4-1971-451c-bbb6-fb3bc0a1f7ec.png)
+- - - -
+### Create and update forms
 
-#### Create and update forms
+![Create and Update forms](https://user-images.githubusercontent.com/102340968/227806002-cf416368-4c70-456f-8f65-54c760e08cb4.png)
 
-![Create and Update forms](https://user-images.githubusercontent.com/102340968/227416089-195f7104-a5b2-4eee-a10e-e030a4fd6bb7.png)
+- - - -
+### Admin Submissions view
+
+![Table view](https://user-images.githubusercontent.com/102340968/227805627-07dd8b7d-c145-4f87-b35e-19022d8e626d.png)
 
 
 ### Database model
 
 The following is the Entity-Relationship Model of the database:
 
- ![Entity-Relationship Model](https://user-images.githubusercontent.com/102340968/227071566-7f7fbcc5-fbee-4734-b807-84733d06e3e8.png)
+![Entity-Relationship Model](https://user-images.githubusercontent.com/102340968/227805340-e61205d2-44f7-405e-9cc9-00d519fe38f5.png)
 
-Currently there is only one table representing the main entity of the application: the Submission. The next step will be to create a categories table to assign to a submission and the users table that will come with the implementation of the authentication system.
+Submissions are assigned to one Category. The next step will be to create the users table that will come with the implementation of the authentication system.
 
 ## Technologies Used
 
