@@ -35,16 +35,19 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 - [ ] Views for CRUD operations on the main entity (A submission).
   - [X] A listing view made of a table.
   - [X] Create and update forms.
-  - [ ] Server side input validation (With bean validation).
+  - [X] Server side input validation (With bean validation).
   - [X] A listing view made of cards.
   - [ ] Implement pagination.
 - [X] Bootstrap styling.
-- [X] Submissions are assigned to a Category.
+- [X] Submissions are assigned to a Category (Categories table).
 - [ ] User authentication.
+- [ ] Submissions are assigned to a User (Users table).
 - [ ] User's template sites.
   - [ ] User dashboard.
   - [ ] User profile.
+  - [ ] User listing (Admin view).
 - [ ] Support for file upload and download.
+- [ ] Custom error views.
 - - - -
 - [ ] User authorization.
   - [ ] Permission over actions on other users submissions.
