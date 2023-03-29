@@ -19,32 +19,25 @@ import java.util.List;
 public class SubmissionController {
 
     @Autowired
-    private SubmissionDataAccess service;
+    private SubmissionDataAccess submissionService;
     @Autowired
     private CategoryDataAccess categoryService;
 
 
     @GetMapping
     public String showListing(Model model) {
-        List<SubmissionDTO> allSubmissions = service.findAll();
-        // fix the tags spacing so that the page can be visualized properly
-        // This can be removed once the database records are normalized and the create and update forms are working to fix this problem
-        for (SubmissionDTO submission : allSubmissions) {
-            String newTags = "";
-            for (String tag : submission.getTags().split(","))
-                newTags += tag.trim().toLowerCase() + ", ";
-            submission.setTags(newTags);
-        }
+        List<SubmissionDTO> allSubmissions = submissionService.findAll();
         model.addAttribute("submissions", allSubmissions);
-        return "submissions/submissionsListing";
+        return "submissions/submissionsGrid";
     }
-
 
     @GetMapping("{id:[0-9]+}")
     public String findById(@PathVariable long id, Model model) {
-        SubmissionDTO submission = service.findById(id);
+
+        SubmissionDTO submission = submissionService.findById(id);
         model.addAttribute("submission", submission);
 
+        // Extract the tags into a list to give to the view to make the pills
         List<String> tags = new ArrayList<String>();
         for (String tag : submission.getTags().split(","))
             tags.add(tag.trim());
@@ -76,14 +69,14 @@ public class SubmissionController {
             model.addAttribute("categories", categoryService.findAll());
             return "submissions/newForm";
         }
-        long newId = service.save(submissionDTO);
+        long newId = submissionService.save(submissionDTO);
         return "redirect:/submissions/" + newId;
     }
 
     @GetMapping("edit/{id:[0-9]+}")
     public String showUpdateForm(@PathVariable long id, Model model) {
         // TODO - validate the submission even exists
-        SubmissionDTO submissionToUpdate = service.findById(id);
+        SubmissionDTO submissionToUpdate = submissionService.findById(id);
         model.addAttribute("submission", submissionToUpdate);
         List<CategoryEntity> categories = categoryService.findAll();
         model.addAttribute("categories", categories);
@@ -105,13 +98,13 @@ public class SubmissionController {
             model.addAttribute("categories", categoryService.findAll());
             return "submissions/updateForm";
         }
-        service.update(id, submissionDTO);
+        submissionService.update(id, submissionDTO);
         return "redirect:/submissions/" + id;
     }
 
     @DeleteMapping("{id:[0-9]+}")
     public String delete(@PathVariable long id, Model model) {
-        service.delete(id);
+        submissionService.delete(id);
         return "redirect:/submissions/";
     }
 }

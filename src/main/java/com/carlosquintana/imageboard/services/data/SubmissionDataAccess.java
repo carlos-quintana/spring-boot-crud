@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class SubmissionDataAccess {
@@ -33,29 +34,40 @@ public class SubmissionDataAccess {
     }
 
     public SubmissionDTO findById(long id) {
-        SubmissionEntity result = repository.findById(id).orElse(null);
-        return result == null ? null : entityToDto(result); //mapper.map(result, SubmissionDTO.class);
+        SubmissionEntity entity = repository.findById(id).orElse(null);
+        if (entity == null) throw new NoSuchElementException("Couldn't find the submission id");
+        return entityToDto(entity); //mapper.map(result, SubmissionDTO.class);
     }
 
     public long save(SubmissionDTO newSubmission) {
         // SubmissionEntity entity = mapper.map(newSubmission, SubmissionEntity.class);
+        // Make sure the given category exists
+        if (categoryRepository.findById(newSubmission.getCategory()).isEmpty())
+            throw new NoSuchElementException("The given category id does not exist, please refer to /categories");
+        // Go through the tags string and refine it a bit by trimming each individual tag and making them lowercase
+        String newTags = "";
+        for (String tag : newSubmission.getTags().split(","))
+            newTags += tag.trim().toLowerCase() + ",";
+        newSubmission.setTags(newTags);
         SubmissionEntity entity = dtoToEntity(newSubmission);
         SubmissionEntity result = repository.save(entity);
         return result.getId();
     }
 
     public SubmissionDTO update(long id, SubmissionDTO submissionToUpdate) {
-        System.out.println(submissionToUpdate);
         // Validate that the target id is an existing submission
         SubmissionEntity existingEntity = repository.findById(id).orElse(null);
         if (existingEntity == null)
-            // The requested entity doesn't exist, TODO exception
-            return null;
+            throw new NoSuchElementException("Couldn't find the submission id");
         // Validate that the category that was sent does exist
         if (categoryRepository.findById(submissionToUpdate.getCategory()).isEmpty())
-            // The category id that was sent does not exist, TODO exception
-            return null;
+            throw new NoSuchElementException("The given category id does not exist, please refer to /categories");
         submissionToUpdate.setId(id);
+        // Refine the tags the same way as when creating a submission
+        String newTags = "";
+        for (String tag : submissionToUpdate.getTags().split(","))
+            newTags += tag.trim().toLowerCase() + ",";
+        submissionToUpdate.setTags(newTags);
         submissionToUpdate.setCreatedAt(existingEntity.getCreatedAt());
         // SubmissionEntity entity = mapper.map(submissionToUpdate, SubmissionEntity.class);
         SubmissionEntity entity = dtoToEntity(submissionToUpdate);
