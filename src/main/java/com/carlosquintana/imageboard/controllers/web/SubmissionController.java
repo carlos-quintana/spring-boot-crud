@@ -25,21 +25,6 @@ public class SubmissionController {
 
 
     @GetMapping
-    public String showGrid(Model model) {
-        List<SubmissionDTO> allSubmissions = service.findAll();
-        // fix the tags spacing so that the page can be visualized properly
-        // This can be removed once the database records are normalized and the create and update forms are working to fix this problem
-        for (SubmissionDTO submission : allSubmissions) {
-            String newTags = "";
-            for (String tag : submission.getTags().split(","))
-                newTags += tag.trim().toLowerCase() + ", ";
-            submission.setTags(newTags);
-        }
-        model.addAttribute("submissions", allSubmissions);
-        return "submissions/submissionsGrid";
-    }
-
-    @GetMapping("admin/submissions/")
     public String showListing(Model model) {
         List<SubmissionDTO> allSubmissions = service.findAll();
         // fix the tags spacing so that the page can be visualized properly
