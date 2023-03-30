@@ -44,11 +44,6 @@ public class SubmissionDataAccess {
         // Make sure the given category exists
         if (categoryRepository.findById(newSubmission.getCategory()).isEmpty())
             throw new NoSuchElementException("The given category id does not exist, please refer to /categories");
-        // Go through the tags string and refine it a bit by trimming each individual tag and making them lowercase
-        String newTags = "";
-        for (String tag : newSubmission.getTags().split(","))
-            newTags += tag.trim().toLowerCase() + ",";
-        newSubmission.setTags(newTags);
         SubmissionEntity entity = dtoToEntity(newSubmission);
         SubmissionEntity result = repository.save(entity);
         return result.getId();
@@ -63,11 +58,6 @@ public class SubmissionDataAccess {
         if (categoryRepository.findById(submissionToUpdate.getCategory()).isEmpty())
             throw new NoSuchElementException("The given category id does not exist, please refer to /categories");
         submissionToUpdate.setId(id);
-        // Refine the tags the same way as when creating a submission
-        String newTags = "";
-        for (String tag : submissionToUpdate.getTags().split(","))
-            newTags += tag.trim().toLowerCase() + ",";
-        submissionToUpdate.setTags(newTags);
         submissionToUpdate.setCreatedAt(existingEntity.getCreatedAt());
         // SubmissionEntity entity = mapper.map(submissionToUpdate, SubmissionEntity.class);
         SubmissionEntity entity = dtoToEntity(submissionToUpdate);

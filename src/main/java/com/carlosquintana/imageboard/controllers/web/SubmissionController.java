@@ -2,6 +2,7 @@ package com.carlosquintana.imageboard.controllers.web;
 
 import com.carlosquintana.imageboard.models.dto.SubmissionDTO;
 import com.carlosquintana.imageboard.models.entities.CategoryEntity;
+import com.carlosquintana.imageboard.services.business.SubmissionService;
 import com.carlosquintana.imageboard.services.data.CategoryDataAccess;
 import com.carlosquintana.imageboard.services.data.SubmissionDataAccess;
 import jakarta.validation.Valid;
@@ -19,7 +20,7 @@ import java.util.List;
 public class SubmissionController {
 
     @Autowired
-    private SubmissionDataAccess submissionService;
+    private SubmissionService submissionService;
     @Autowired
     private CategoryDataAccess categoryService;
 
@@ -38,9 +39,7 @@ public class SubmissionController {
         model.addAttribute("submission", submission);
 
         // Extract the tags into a list to give to the view to make the pills
-        List<String> tags = new ArrayList<String>();
-        for (String tag : submission.getTags().split(","))
-            tags.add(tag.trim());
+        List<String> tags = submissionService.parseOutputTags(submission.getTags());
         model.addAttribute("tags", tags);
 
         return "submissions/submissionView";
