@@ -63,8 +63,10 @@ public class SubmissionService {
     // This function will take a string of tags separated by commas and split it into the individual substrings
     public List<String> parseOutputTags(String tagsString) {
         List<String> tagsList = new ArrayList<String>();
-        for (String tag : tagsString.split(","))
-            tagsList.add(tag.trim());
+        for (String tag : tagsString.split(",")) {
+            if (tag.trim().length() > 0)
+                tagsList.add(tag.trim());
+        }
         return tagsList;
     }
 }
