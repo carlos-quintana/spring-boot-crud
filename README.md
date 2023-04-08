@@ -4,7 +4,7 @@ Image board site created with Java and Spring Boot
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Description](#description)
-3. [Features](#features)
+3. [Features](#features-checklist)
 4. [Instructions](#instructions)
 5. [Showcase](#showcase)
 6. [Technologies Used](#technologies-used)
@@ -28,7 +28,7 @@ Submissions will contain information given by the user, like a title, a descript
 Users will have their own profile page where they can see their **Gallery** containing their own submissions, and visit other users' galleries to see theirs.
 Users can interact with other users' submissions by giving a **Like** or leaving a **Comment**.
 
-### Features
+### Features checklist
 
 **MVP:**
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
