@@ -33,10 +33,9 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 **MVP:**
 - [X] API Endpoint for CRUD operations on the main entity (A submission).
 - [ ] Views for CRUD operations on the main entity (A submission).
-  - [X] A listing view made of a table.
+  - [X] A listing view made of cards.
   - [X] Create and update forms.
   - [X] Server side input validation (With bean validation).
-  - [X] A listing view made of cards.
   - [ ] Implement pagination.
 - [X] Bootstrap styling.
 - [X] Submissions are assigned to a Category (Categories table).
@@ -50,17 +49,9 @@ Users can interact with other users' submissions by giving a **Like** or leaving
 - [ ] Custom error views.
 - - - -
 - [ ] User authorization.
-  - [ ] Permission over actions on other users submissions.
-  - [ ] Guest visualization.
-  - [ ] Admin role for a super user.
 - [ ] Search feature.
-  - [ ] Search by user.
-  - [ ] Search by name.
-  - [ ] Search by tags.
-  - [ ] Search by dates.
 - [ ] Users interactions over others' submission (Likes).
 - [ ] Posts have a comments section.
-- [ ] Move away from Bootstrap styling into Tailwind CSS.
 
 ## Instructions
 
